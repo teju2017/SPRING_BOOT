@@ -38,5 +38,12 @@ public class ControllerRestApi {
 	{
 		return " this year is 2020";
 	}
+	
+	@GetMapping("/springboot/sparksql")
+	public String sparksql()
+	{
+		return " this is a spark sql";
+	}
+
 
 }
