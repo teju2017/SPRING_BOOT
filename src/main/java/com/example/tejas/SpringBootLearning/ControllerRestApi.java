@@ -42,7 +42,7 @@ public class ControllerRestApi {
 	@GetMapping("/springboot/sparksql")
 	public String sparksql()
 	{
-		return " this is a spark sql";
+		return " this is a spark-SQL";
 	}
 
 
