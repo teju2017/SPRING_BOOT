@@ -32,5 +32,11 @@ public class ControllerRestApi {
 		return "Current time is "+abcd;
 		
 	}
+	
+	@GetMapping("/springboot/showyear")
+	public String showyear()
+	{
+		return " this year is 2020";
+	}
 
 }
