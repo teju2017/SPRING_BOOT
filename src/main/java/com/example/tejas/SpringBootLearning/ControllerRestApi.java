@@ -1,20 +1,18 @@
 package com.example.tejas.SpringBootLearning;
 
 import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ControllerRestApi {
 	
-	@GetMapping("/")
-	public String workingok()
-	{
-		return "Workig ok";
-	}
+
 	
 	@GetMapping("/springboot/show")
 	public String show()
@@ -42,8 +40,9 @@ public class ControllerRestApi {
 	@GetMapping("/springboot/sparksql")
 	public String sparksql()
 	{
-		return " this is a spark-SQL";
+		return "this is a spark-SQLscxcxczczczx";
 	}
+	
 
 
 }
