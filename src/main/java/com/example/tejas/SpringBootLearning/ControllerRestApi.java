@@ -1,11 +1,8 @@
 package com.example.tejas.SpringBootLearning;
 
-import java.text.DateFormat;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,6 +39,16 @@ public class ControllerRestApi {
 	{
 		return "this is a spark-SQLscxcxczczczx";
 	}
+	
+	/* a new addition on May 3rd 2020 */
+	
+	
+	@GetMapping("/springboot/unexpected")
+	public String pandemic()
+	{
+		return "COVID-19 is a pandemic";
+	}
+	
 	
 
 
