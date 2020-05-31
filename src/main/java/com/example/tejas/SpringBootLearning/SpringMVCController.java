@@ -73,6 +73,14 @@ public class SpringMVCController {
 	    	return "Input_value";
 	    }
         
+        /*
+         *  Below get request is an example of associating the values entered in the form to a POJO class
+         *  In the Thymeleaf format we have the object obj containing all the form values
+         *  This value is mapped to the fields in the Experience class, make sure the name mentioned in
+         *  the field of the class should match with the name mentioned in the HTML ( This dependency
+         *  injection for the exp class happens via the Spring MVC framework )
+         */
+        
         @GetMapping("/getinputs")
 	    public String getInputs(@ModelAttribute("obj") Experience exp, Model mdt)
 	    {
