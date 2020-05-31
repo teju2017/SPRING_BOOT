@@ -5,6 +5,12 @@ import java.util.Date;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.tejas.SpringBootLearning.pojo.Experience;
 
 @Controller
 public class SpringMVCController {
@@ -45,7 +51,40 @@ public class SpringMVCController {
 		 //  System.out.println("Model value is "+model.toString());
          return "error"; //view
 	    }
+	    
+	    @GetMapping("/submissionform")
+	    public String submitDetails()
+	    {
+	    	return "Submission";
+	    }
 	  
+	    
+        @GetMapping("/getDetail")
+	    public String getDetail(@ModelAttribute("fname") String fname, Model map)
+	    {
+	    	System.out.println("Fname value is "+fname);
+	    	map.addAttribute("fname",fname);
+	    	return "hello";
+	    }
+        
+        @GetMapping("/submissionform_1")
+	    public String submitDetailsone()
+	    {
+	    	return "Input_value";
+	    }
+        
+        @GetMapping("/getinputs")
+	    public String getInputs(@ModelAttribute("obj") Experience exp, Model mdt)
+	    {
+	    	System.out.println("Incoming attribues");
+	    	System.out.println("values are "+exp.getExperience()+ "   technology ="+exp.getTechnology());
+	    	mdt.addAttribute("experience", exp.getExperience());
+	    	mdt.addAttribute("technology", exp.getTechnology());
+	    	return "output";
+	    }
+	  
+        
+        
 	
 
 }

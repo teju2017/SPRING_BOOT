@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- 
+   In the below template make sure the name given 
+   in the input type should match with the field
+   mentioned in the POJO class, without which it fails
+   to instantiate the values
+ -->
+
+
+<head>
+<h1 align = "centre">SUBMISSION FORM </h1> 
+<form th:action="@{/getinputs}" th:object="${obj}" method="GET">
+  <label for="Year of experience">Experience</label>
+  <input type="number" id="exp" name="experience"><br><br>
+  <label for="Technology">Technology:</label>
+  <input type="text" id="tech" name="technology">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<h1 align="center"> DISPLAYING THE INPUTTED FIELDS </h1>
+</head>
+<form action="/submissionform_1" method="Get">
+<body>
+   <p th:text="'Experience is ' + ${experience}" />
+   <p th:text="'Technology is '+ ${technology}"/>
+   <br><br>
+   <input type="submit" value="OneMoreSubmission">
+</body>
+</form>
