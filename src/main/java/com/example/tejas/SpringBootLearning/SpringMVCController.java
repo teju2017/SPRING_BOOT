@@ -39,7 +39,7 @@ public class SpringMVCController {
 	    }
 	    
 	    
-	    @GetMapping("/errorPage")
+	   @GetMapping("/errorPage")
 	     public String errorpage1(Model model) 
 	    {
 		  @SuppressWarnings("unused")
