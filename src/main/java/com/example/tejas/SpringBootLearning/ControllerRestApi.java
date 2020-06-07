@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ControllerRestApi {
 	
+	
+	/*
+	 * Getmapping for the RESTCONTROLLER API, no view section
+	 */
 
 	
 	@GetMapping("/springboot/show")
