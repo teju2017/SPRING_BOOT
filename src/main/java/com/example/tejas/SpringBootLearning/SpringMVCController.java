@@ -2,6 +2,7 @@ package com.example.tejas.SpringBootLearning;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +11,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.tejas.SpringBootLearning.DAO.Billionaire;
+import com.example.tejas.SpringBootLearning.DAO.BillionarieInter;
+import com.example.tejas.SpringBootLearning.pojo.BilliondataInput;
 import com.example.tejas.SpringBootLearning.pojo.Experience;
 
 @Controller
 public class SpringMVCController {
+	
+	
+	@Autowired
+	private BillionarieInter biliinter;
 	
 	  @GetMapping("/")
 	    public String mainmethod(Model model) 
@@ -90,6 +98,25 @@ public class SpringMVCController {
 	    	mdt.addAttribute("technology", exp.getTechnology());
 	    	return "output";
 	    }
+        
+        
+        
+        @GetMapping("/input_data")
+	    public String getdata()
+	    {
+        	return "bill_data";
+	    }
+        
+        @GetMapping("/insertdata")
+        public String insertdata(@ModelAttribute("ins") BilliondataInput bildata,Model mdt)
+        {
+        	System.out.println("Incoming data values are ="+bildata.getFname()+" "+bildata.getLname()+"  "+bildata.getCareer());
+        	Billionaire bilobj = new Billionaire(bildata.getFname(), bildata.getLname(), bildata.getCareer());
+        	biliinter.save(bilobj);
+        	return "insertiondone";
+        	
+        }
+	    
 	  
         
         
