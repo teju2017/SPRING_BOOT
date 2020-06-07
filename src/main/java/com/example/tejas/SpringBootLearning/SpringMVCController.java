@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.tejas.SpringBootLearning.DAO.Billionaire;
 import com.example.tejas.SpringBootLearning.DAO.BillionarieInter;
+import com.example.tejas.SpringBootLearning.DAO.Checker;
+import com.example.tejas.SpringBootLearning.DAO.ServicelayerData;
 import com.example.tejas.SpringBootLearning.pojo.BilliondataInput;
 import com.example.tejas.SpringBootLearning.pojo.Experience;
 
@@ -20,8 +22,20 @@ import com.example.tejas.SpringBootLearning.pojo.Experience;
 public class SpringMVCController {
 	
 	
+	//@Autowired
+	// private BillionarieInter biliinter;
+	
 	@Autowired
-	private BillionarieInter biliinter;
+	private ServicelayerData serv;
+	
+	
+	/*
+	 * Below provides the bean for calling the method
+	 *  
+	 */
+	
+	@Autowired
+	private Checker chk;
 	
 	  @GetMapping("/")
 	    public String mainmethod(Model model) 
@@ -112,7 +126,10 @@ public class SpringMVCController {
         {
         	System.out.println("Incoming data values are ="+bildata.getFname()+" "+bildata.getLname()+"  "+bildata.getCareer());
         	Billionaire bilobj = new Billionaire(bildata.getFname(), bildata.getLname(), bildata.getCareer());
-        	biliinter.save(bilobj);
+        	chk.testvalue();
+        	//biliinter.save(bilobj);
+            serv.checkvalue(bilobj);
+            
         	return "insertiondone";
         	
         }
