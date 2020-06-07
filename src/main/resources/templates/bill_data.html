@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<h1 align = "centre">SUBMISSION FORM </h1> 
+<form th:action="@{/insertdata}" th:object="${ins}" method="GET">
+  <label for="Firstname">First_name</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="Lastname">Lastname</label>
+  <input type="text" id="last_name" name="lname">
+  <br></br>
+  <label for="career">career</label>
+  <input type="text" id="career" name="career">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
