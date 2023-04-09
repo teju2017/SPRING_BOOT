@@ -1,0 +1,6 @@
+avu|password|extUser|EXTUSER
+admin|password|admin|ADMIN
+norm|Test@123|admin|ADMIN
+tej|password|admin|ADMIN
+user|workingWell|extUser|EXTUSER
+TestUser|TestIng|adsd|EXTsdssf
